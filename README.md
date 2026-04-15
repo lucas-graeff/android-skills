@@ -1,6 +1,6 @@
 # Android / KMP Architecture Skills for Claude Code
 
-A collection of six opinionated architecture skills that teach Claude Code how to write Android and Kotlin Multiplatform code the way you'd write it yourself. Once installed, Claude will automatically follow these patterns whenever you ask it to scaffold features, write tests, set up navigation, and more.
+A collection of eight opinionated architecture skills that teach Claude Code how to write Android and Kotlin Multiplatform code the way you'd write it yourself. Once installed, Claude will automatically follow these patterns whenever you ask it to scaffold features, write tests, set up navigation, and more.
 
 ## Prerequisites: Installing Claude Code
 
@@ -30,13 +30,17 @@ Then run `claude` to launch Claude Code and complete the authentication flow.
 
 ## Installing the Skills
 
-Each skill is a single markdown file (`SKILL.md`) inside its own folder. To install them, copy the six skill folders into your Claude Code skills directory:
+Each skill is a single markdown file (`SKILL.md`) inside its own folder. To install them, copy the eight skill folders into your Claude Code skills directory:
 
 ```
 ~/.claude/skills/
+├── android-compose-ui/
+│   └── SKILL.md
 ├── android-data-layer/
 │   └── SKILL.md
 ├── android-di-koin/
+│   └── SKILL.md
+├── android-error-handling/
 │   └── SKILL.md
 ├── android-module-structure/
 │   └── SKILL.md
@@ -48,9 +52,17 @@ Each skill is a single markdown file (`SKILL.md`) inside its own folder. To inst
     └── SKILL.md
 ```
 
-Simply paste the six folders into `~/.claude/skills/` and they'll be picked up automatically the next time you start a Claude Code session. No restart or configuration is needed beyond having the files in place.
+Simply paste the eight folders into `~/.claude/skills/` and they'll be picked up automatically the next time you start a Claude Code session. No restart or configuration is needed beyond having the files in place.
 
 ## What Each Skill Does
+
+### android-compose-ui
+
+Compose UI patterns: stability and recomposition optimization, side-effect guidelines, lazy layout best practices, animation without recomposition (graphicsLayer, deferred state reads), modifier extensions, design system slot APIs, previews, accessibility, and TextField state ownership.
+
+### android-error-handling
+
+The shared error-handling foundation used across all layers: a generic `Result<T, E>` wrapper, `DataError` sealed interface (Network + Local), `EmptyResult` typealias, chaining extensions (`map`, `onSuccess`, `onFailure`, `asEmptyResult`), `UiText` error mapping, and typed safe-call helpers for Ktor.
 
 ### android-module-structure
 
