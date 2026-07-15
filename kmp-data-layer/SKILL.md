@@ -1,14 +1,14 @@
 ---
-name: android-data-layer
+name: kmp-data-layer
 description: |
-  Data layer patterns for Android/KMP - data sources, repositories, DTOs, mappers, Room entities, Ktor HttpClient, safe call helpers, token storage, and offline-first. Use this skill whenever writing or reviewing a data source or repository, creating DTOs or Room entities, writing mappers, setting up the Ktor HttpClient, handling network errors, or implementing token refresh. Trigger on phrases like "create a repository", "create a data source", "add a DAO", "Ktor client", "write a mapper", "DTO", "Room entity", "network call", "token storage", or "offline-first".
+  Data layer patterns for Mobile/KMP - data sources, repositories, DTOs, mappers, Room entities, Ktor HttpClient, safe call helpers, token storage, and offline-first. Use this skill whenever writing or reviewing a data source or repository, creating DTOs or Room entities, writing mappers, setting up the Ktor HttpClient, handling network errors, or implementing token refresh. Trigger on phrases like "create a repository", "create a data source", "add a DAO", "Ktor client", "write a mapper", "DTO", "Room entity", "network call", "token storage", or "offline-first".
 ---
  
-# Android / KMP Data Layer
+# Mobile / KMP Data Layer
  
 ## Error Handling
 
-This skill uses `Result<T, E>`, `DataError`, and the extension helpers defined in the **android-error-handling** skill. Refer to that skill for the full `Result` wrapper, `DataError` sealed interface, and `map`/`onSuccess`/`onFailure`/`asEmptyResult` extensions.
+This skill uses `Result<T, E>`, `DataError`, and the extension helpers defined in the **kmp-error-handling** skill. Refer to that skill for the full `Result` wrapper, `DataError` sealed interface, and `map`/`onSuccess`/`onFailure`/`asEmptyResult` extensions.
 
 ---
 
@@ -121,7 +121,7 @@ Inject `HttpClient` via Koin. For KMP, use the platform default engine.
  
 ## Ktor — Safe Call Helpers (`core:data`)
 
-Use `safeCall` / `responseToResult` helpers and typed extension functions (`HttpClient.get`, `HttpClient.post`, `HttpClient.delete`) to keep data source call sites clean and uniform. See the **android-error-handling** skill for the full implementation of these helpers.
+Use `safeCall` / `responseToResult` helpers and typed extension functions (`HttpClient.get`, `HttpClient.post`, `HttpClient.delete`) to keep data source call sites clean and uniform. See the **kmp-error-handling** skill for the full implementation of these helpers.
 
 ```kotlin
 suspend fun getNotes(): Result<List<NoteDto>, DataError.Network> {
@@ -169,7 +169,7 @@ This pattern is optional — apply it when the project requires offline support.
 
 - [ ] Define domain model(s) in `feature:domain`
 - [ ] Define data source or repository interface in `feature:domain`
-- [ ] Define feature-specific error type(s) in `feature:domain` (implement `Error`) — see **android-error-handling** skill
+- [ ] Define feature-specific error type(s) in `feature:domain` (implement `Error`) — see **kmp-error-handling** skill
 - [ ] Define DTOs and Room entities in `feature:data`
 - [ ] Write mappers as extension functions in `feature:data`
 - [ ] Implement data source (single source) or repository (multi-source) in `feature:data`, named for what makes it unique

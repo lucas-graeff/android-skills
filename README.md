@@ -1,6 +1,6 @@
-# Android / KMP Architecture Skills for Claude Code
+# Mobile / KMP Architecture Skills for Claude Code
 
-A collection of eight opinionated architecture skills that teach Claude Code how to write Android and Kotlin Multiplatform code the way you'd write it yourself. Once installed, Claude will automatically follow these patterns whenever you ask it to scaffold features, write tests, set up navigation, and more.
+A collection of eight opinionated architecture skills that teach Claude Code how to write Mobile and Kotlin Multiplatform code the way you'd write it yourself. Once installed, Claude will automatically follow these patterns whenever you ask it to scaffold features, write tests, set up navigation, and more.
 
 ## Prerequisites: Installing Claude Code
 
@@ -34,21 +34,21 @@ Each skill is a single markdown file (`SKILL.md`) inside its own folder. To inst
 
 ```
 ~/.claude/skills/
-├── android-compose-ui/
+├── kmp-compose-ui/
 │   └── SKILL.md
-├── android-data-layer/
+├── kmp-data-layer/
 │   └── SKILL.md
-├── android-di-koin/
+├── kmp-di-koin/
 │   └── SKILL.md
-├── android-error-handling/
+├── kmp-error-handling/
 │   └── SKILL.md
-├── android-module-structure/
+├── kmp-module-structure/
 │   └── SKILL.md
-├── android-navigation/
+├── kmp-navigation/
 │   └── SKILL.md
-├── android-presentation-mvi/
+├── kmp-presentation-mvi/
 │   └── SKILL.md
-└── android-testing/
+└── kmp-testing/
     └── SKILL.md
 ```
 
@@ -56,35 +56,35 @@ Simply paste the eight folders into `~/.claude/skills/` and they'll be picked up
 
 ## What Each Skill Does
 
-### android-compose-ui
+### kmp-compose-ui
 
 Compose UI patterns: stability and recomposition optimization, side-effect guidelines, lazy layout best practices, animation without recomposition (graphicsLayer, deferred state reads), modifier extensions, design system slot APIs, previews, accessibility, and TextField state ownership.
 
-### android-error-handling
+### kmp-error-handling
 
 The shared error-handling foundation used across all layers: a generic `Result<T, E>` wrapper, `DataError` sealed interface (Network + Local), `EmptyResult` typealias, chaining extensions (`map`, `onSuccess`, `onFailure`, `asEmptyResult`), `UiText` error mapping, and typed safe-call helpers for Ktor.
 
-### android-module-structure
+### kmp-module-structure
 
 Defines the project-level blueprint: feature-layered modularization, Gradle convention plugins, version catalogs, and dependency rules. Claude will follow this structure whenever you ask it to create a new module, set up a project, or decide where code should live.
 
-### android-data-layer
+### kmp-data-layer
 
 Covers everything below the domain boundary: repository implementations, DTOs, Room entities and DAOs, Ktor `HttpClient` setup, safe-call helpers, token storage, offline-first patterns, and the shared `Result` / `DataError` types.
 
-### android-presentation-mvi
+### kmp-presentation-mvi
 
 The MVI presentation layer pattern: a single `State` data class, a sealed `Action` interface, one-time `Event` side-effects via `Channel`, ViewModel wiring, the Root/Screen composable split, `UiText` error mapping, and process-death handling with `SavedStateHandle`.
 
-### android-navigation
+### kmp-navigation
 
 Type-safe Compose Navigation using `@Serializable` route objects, one nav graph per feature, cross-feature navigation through callbacks, and assembly in the `:app` module.
 
-### android-di-koin
+### kmp-di-koin
 
 Koin dependency injection conventions: one module per feature layer, `single` / `viewModel` / `factory` scoping, assembling modules in `:app`, and injecting ViewModels in composables with `koinViewModel()`.
 
-### android-testing
+### kmp-testing
 
 Testing patterns and stack: JUnit 5 + AssertK + Turbine for ViewModel unit tests, `UnconfinedTestDispatcher`, fake repositories, `SavedStateHandle` testing, and Compose UI tests with `ComposeTestRule`.
 

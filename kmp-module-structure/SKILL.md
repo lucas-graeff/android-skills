@@ -1,9 +1,9 @@
 ---
-name: android-module-structure
-description: Module layout, dependency rules, and Gradle convention plugins for Android and Kotlin Multiplatform (KMP) projects. Use this skill whenever setting up a new Android/KMP project, deciding where a new module should live, asking "how should I structure this", creating a new feature module, adding a core submodule, configuring Gradle convention plugins, working with version catalogs, or making any decision about project-level architecture. Trigger on phrases like "set up the project", "add a module", "create a feature", "how should I structure", "project structure", "convention plugin", "build-logic", or "where does X live".
+name: kmp-module-structure
+description: Module layout, dependency rules, and Gradle convention plugins for Mobile and Kotlin Multiplatform (KMP) projects. Use this skill whenever setting up a new Mobile/KMP project, deciding where a new module should live, asking "how should I structure this", creating a new feature module, adding a core submodule, configuring Gradle convention plugins, working with version catalogs, or making any decision about project-level architecture. Trigger on phrases like "set up the project", "add a module", "create a feature", "how should I structure", "project structure", "convention plugin", "build-logic", or "where does X live".
 ---
  
-# Android / KMP Module Structure
+# Mobile / KMP Module Structure
  
 ## Core Philosophy
  
@@ -17,7 +17,7 @@ description: Module layout, dependency rules, and Gradle convention plugins for 
 ## Module Layout
  
 ```
-:app
+:composeApp
 :build-logic                    ← Gradle convention plugins
 :core:domain                    ← Shared domain models, repository interfaces, error types, Result
 :core:data                      ← Shared data logic, Ktor HttpClient factory, shared DB schemas/DAOs
@@ -41,7 +41,7 @@ A shared Room database is a good candidate for a dedicated `:core:database` modu
 | `presentation` | `domain` (own feature), `core:domain`, `core:presentation`, `core:design-system` |
 | `data` | `domain` (own feature), `core:domain`, `core:data` |
 | `domain` | `core:domain` only — never `data` or `presentation` |
-| `:app` | everything (wires all modules) |
+| `:composeApp` | everything (wires all modules) |
 
 **Every** layer and module may access `core:domain`.
  
@@ -78,7 +78,6 @@ Use **version catalogs** (`libs.versions.toml`) for all dependency and version m
 | Navigation | Compose Navigation (type-safe) |
 | Serialization | KotlinX Serialization (Ktor + Nav routes) |
 | Image loading | Coil |
-| Logging | Kermit |
 | Async | Coroutines + Flow |
 | Background tasks | WorkManager |
 | Secrets | `local.properties` + `BuildConfig` (Android); `BuildKonfig` (KMP) |
@@ -92,4 +91,4 @@ Use **version catalogs** (`libs.versions.toml`) for all dependency and version m
 - [ ] Create `:feature:<name>:domain`, `:feature:<name>:data`, `:feature:<name>:presentation` modules
 - [ ] Apply appropriate convention plugins to each module (`domain-module`, `android-library`/`android-feature`)
 - [ ] Verify no cross-feature dependencies are introduced
-- [ ] If logic is shared across 2+ features, extract to the appropriate `core` submodule
+- [ ] If logic is shared across 2+ features, extract to the appropriate `shared` submodule

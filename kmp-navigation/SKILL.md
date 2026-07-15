@@ -1,10 +1,10 @@
 ---
-name: android-navigation
+name: kmp-navigation
 description: |
-  Type-safe Compose Navigation for Android/KMP - route objects, feature nav graphs, cross-feature callbacks, and wiring in :app. Use this skill whenever setting up navigation, defining routes, adding a new screen to a nav graph, navigating between features, or wiring nav graphs in the app module. Trigger on phrases like "set up navigation", "add a route", "navigate between screens", "nav graph", "NavController", "type-safe nav", "cross-feature navigation", or "NavGraphBuilder".
+  Type-safe Compose Navigation for Mobile/KMP - route objects, feature nav graphs, cross-feature callbacks, and wiring in :app. Use this skill whenever setting up navigation, defining routes, adding a new screen to a nav graph, navigating between features, or wiring nav graphs in the app module. Trigger on phrases like "set up navigation", "add a route", "navigate between screens", "nav graph", "NavController", "type-safe nav", "cross-feature navigation", or "NavGraphBuilder".
 ---
  
-# Android / KMP Navigation
+# Mobile / KMP Navigation
  
 ## Principles
  

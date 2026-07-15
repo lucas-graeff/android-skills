@@ -1,10 +1,10 @@
 ---
-name: android-compose-ui
+name: kmp-compose-ui
 description: |
-  Compose UI patterns for Android/KMP - stability, recomposition, side effects, lazy lists, animations, previews, accessibility, modifier extensions, and design system composables. Use this skill whenever writing or reviewing composables, optimizing recomposition, adding animations, creating previews, writing custom modifiers, structuring a design system, or making any Compose UI decision beyond the MVI/ViewModel layer. Trigger on phrases like "composable", "recomposition", "LaunchedEffect", "Modifier", "LazyColumn", "preview", "animation", "design system", "stability", "contentDescription", "graphicsLayer", "slot API", or "Compose performance".
+  Compose UI patterns for Mobile/KMP - stability, recomposition, side effects, lazy lists, animations, previews, accessibility, modifier extensions, and design system composables. Use this skill whenever writing or reviewing composables, optimizing recomposition, adding animations, creating previews, writing custom modifiers, structuring a design system, or making any Compose UI decision beyond the MVI/ViewModel layer. Trigger on phrases like "composable", "recomposition", "LaunchedEffect", "Modifier", "LazyColumn", "preview", "animation", "design system", "stability", "contentDescription", "graphicsLayer", "slot API", or "Compose performance".
 ---
 
-# Android / KMP Compose UI Patterns
+# Mobile / KMP Compose UI Patterns
 
 ## Core Principle
 
@@ -243,4 +243,4 @@ TextField(
 )
 ```
 
-The ViewModel updates state (and optionally persists to `SavedStateHandle`) in response to the Action — see the **android-presentation-mvi** skill for the full pattern.
+The ViewModel updates state (and optionally persists to `SavedStateHandle`) in response to the Action — see the **kmp-presentation-mvi** skill for the full pattern.

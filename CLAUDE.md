@@ -4,18 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-This is a **collection of Claude Code skills** (not a buildable Android project). Each subdirectory contains a single `SKILL.md` file that teaches Claude Code opinionated Android/Kotlin Multiplatform architecture patterns. Users install these by copying the folders into `~/.claude/skills/`.
+This is a **collection of Claude Code skills** (not a buildable mobile project). Each subdirectory contains a single `SKILL.md` file that teaches Claude Code opinionated Mobile/Kotlin Multiplatform architecture patterns. Users install these by copying the folders into `~/.claude/skills/`.
 
 There are 8 skills total, each in its own directory:
 
-- **android-module-structure** -- Project layout, feature-layered modularization, convention plugins, dependency rules
-- **android-data-layer** -- Repositories, data sources, DTOs, mappers, Room, Ktor, offline-first patterns
-- **android-error-handling** -- Generic `Result<T, E>` wrapper, `DataError` types, safe call helpers, `UiText` mapping
-- **android-presentation-mvi** -- MVI pattern: State/Action/Event, ViewModel, Root/Screen composable split, `SavedStateHandle`
-- **android-navigation** -- Type-safe Compose Navigation with `@Serializable` routes, feature nav graphs, cross-feature callbacks
-- **android-di-koin** -- Koin DI conventions: module-per-layer, `singleOf`/`viewModelOf`, assembly in `:app`
-- **android-testing** -- JUnit 5 + AssertK + Turbine, fakes over mocks, Robot pattern for UI tests
-- **android-compose-ui** -- Compose stability, recomposition, side effects, animations, previews, accessibility
+- **kmp-module-structure** -- Project layout, feature-layered modularization, convention plugins, dependency rules
+- **kmp-data-layer** -- Repositories, data sources, DTOs, mappers, Room, Ktor, offline-first patterns
+- **kmp-error-handling** -- Generic `Result<T, E>` wrapper, `DataError` types, safe call helpers, `UiText` mapping
+- **kmp-presentation-mvi** -- MVI pattern: State/Action/Event, ViewModel, Root/Screen composable split, `SavedStateHandle`
+- **kmp-navigation** -- Type-safe Compose Navigation with `@Serializable` routes, feature nav graphs, cross-feature callbacks
+- **kmp-di-koin** -- Koin DI conventions: module-per-layer, `singleOf`/`viewModelOf`, assembly in `:app`
+- **kmp-testing** -- JUnit 5 + AssertK + Turbine, fakes over mocks, Robot pattern for UI tests
+- **kmp-compose-ui** -- Compose stability, recomposition, side effects, animations, previews, accessibility
 
 ## Key Architecture Decisions Encoded in the Skills
 
